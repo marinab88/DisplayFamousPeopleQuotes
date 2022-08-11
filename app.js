@@ -44,11 +44,12 @@ const list = [
 const button = document.getElementById('button');
 let divQuote = document.getElementById('quote');
 
+const randomNr = () => {
+  return Math.floor(Math.random() * list.length);
+}
+
 const displayQuotes = () => {
-
-  let randomNr = Math.floor(Math.random() * list.length);
-
-  divQuote.innerHTML = `${list[randomNr].quote} - ${list[randomNr].author}`;
+  divQuote.innerHTML = `${list[randomNr()].quote} - ${list[randomNr()].author}`;
 }
 
 button.addEventListener('click', displayQuotes);
